@@ -2,7 +2,7 @@
 
 ---
 
-## Projeto ETL para Extração, Transformação e Carga de Dados de Motores de Busca
+## Projeto ETL para Extração, Transformação e Carga de Dados de Motores Word
 
 Neste projeto, estamos desenvolvendo um processo ETL (Extração, Transformação e Carga) para otimizar a análise de dados provenientes da motores word. O objetivo é transformar dados brutos, armazenados em um banco de dados PostgreSQL, em insights acionáveis utilizando um conjunto robusto de ferramentas e tecnologias.
 
