@@ -1,2 +1,21 @@
 # motors_word_etl_process
-Projeto ETL para Dados de Motores de Busca  Desenvolvemos um processo ETL para otimizar a análise de dados de motores de busca. Utilizamos Dataflow, Apache Beam, Python, Cloud Build, Artifact Registry, BigQuery, DBT, Secret Manager e GitHub. Os dados são extraídos de um banco PostgreSQL e transformados para análises avançadas.
+
+---
+
+## Projeto ETL para Extração, Transformação e Carga de Dados de Motores de Busca
+
+Neste projeto, estamos desenvolvendo um processo ETL (Extração, Transformação e Carga) para otimizar a análise de dados provenientes da motores word. O objetivo é transformar dados brutos, armazenados em um banco de dados PostgreSQL, em insights acionáveis utilizando um conjunto robusto de ferramentas e tecnologias.
+
+### Ferramentas e Tecnologias Utilizadas:
+
+- **Dataflow e Apache Beam:** Para o processamento e transformação dos dados em escala.
+- **Python:** Linguagem de programação principal para scripts e pipelines ETL.
+- **Cloud Build e Artifact Registry:** Para automação de builds e armazenamento de artefatos.
+- **BigQuery:** Para armazenamento e consulta de grandes volumes de dados transformados.
+- **DBT (Data Build Tool):** Para gestão e versionamento de modelos de dados.
+- **Secret Manager:** Para gerenciamento seguro de credenciais e informações sensíveis.
+- **GitHub:** Para controle de versão e colaboração no desenvolvimento do projeto.
+
+Através deste pipeline ETL, garantiremos que os dados da motores word sejam extraídos, transformados e carregados de maneira eficiente e segura, proporcionando uma base sólida para análises avançadas e tomadas de decisão estratégicas.
+
+---
