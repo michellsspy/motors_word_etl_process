@@ -12,5 +12,7 @@ class GetNames(beam.DoFn):
 
         controler = pd.read_csv('data/controler.csv')
         
-        yield list(controler['tables'])
+        list_names = list(controler['table'])    
+        
+        yield list_names
 

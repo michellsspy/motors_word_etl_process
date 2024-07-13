@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout, format="%(asctime)s -
 secret_client = secretmanager.SecretManagerServiceClient()
 
 # Recuperando o nome do banco de dados
-secret_name = "projects/872130982957/secrets/service-account-motors-word-etl-process/versions/1"
+secret_name = "projects/872130982957/secrets/service-account-motors-word/versions/1"
 
 # Acessando o valor da secret
 response = secret_client.access_secret_version(name=secret_name)
@@ -27,7 +27,13 @@ response = secret_client.access_secret_version(name=secret_name)
 secret_payload = response.payload.data.decode("UTF-8")
 
 # O payload é um Json - Convertendo para um dict
-secret_dict = json.loads(secret_payload) 
+secret_dict = None
+try:
+    secret_dict = json.loads(secret_payload)
+except json.JSONDecodeError as e:
+    logging.error(f"Erro ao carregar JSON: {e}")
+    logging.error(f"Conteúdo recebido: {secret_payload}")
+    raise
 
 with tempfile.NamedTemporaryFile(delete=False, suffix=".json", mode="w") as temp_file:
     json.dump(secret_dict, temp_file)
@@ -80,7 +86,7 @@ def main(argv=None):
     # Criando o pipeline
 
 
-    with beam.Pipeline(options=options) as pipeline:
+    with beam.Pipeline() as pipeline:
         get_names = (
             pipeline
             | f'Start Pipeline {formatted_datetime}' >> beam.Create([None])
